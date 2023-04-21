@@ -1,2 +1,9 @@
-package exceprions;public class NullRecordExceprion {
+package exceprions;
+
+public class NullRecordException extends RuntimeException{
+    public NullRecordException(String message) {
+        super(message);
+    }
+
+
 }

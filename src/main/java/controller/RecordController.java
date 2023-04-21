@@ -1,7 +1,8 @@
-package service;
+package controller;
 
 import entity.Record;
 import exceprions.NullRecordException;
+import exceprions.RecordExistException;
 
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class RecordController {
 
         if (!accounts.containsKey(record.getAccount()))
             accounts.put(record.getAccount(), record);
+        else throw new RecordExistException("Record is already exist");
 
         if (!names.containsKey(record.getName()))
             names.put(record.getName(), new ArrayList<>());
@@ -120,5 +122,11 @@ public class RecordController {
             throw new NullRecordException("Record is not exist");
         }
 
+    }
+
+    public void printAllRecords(){
+        for (Map.Entry<Long, Record> r : accounts.entrySet()){
+            System.out.println(r);
+        }
     }
 }

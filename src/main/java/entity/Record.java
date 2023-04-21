@@ -1,14 +1,19 @@
 package entity;
 
-public final class Note {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+
+@Data
+@AllArgsConstructor
+public final class Record {
+
     private long account;
     private String name;
     private double value;
 
-    public Note(long account, String name, double value) {
-        this.account = account;
-        this.name = name;
-        this.value = value;
+    @Override
+    public String toString() {
+        return " " + name + " " + value ;
     }
-
 }

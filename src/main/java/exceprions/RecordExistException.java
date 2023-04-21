@@ -1,2 +1,7 @@
-package exceprions;public class RecordExist {
+package exceprions;
+
+public class RecordExistException extends RuntimeException{
+    public RecordExistException(String message) {
+        super(message);
+    }
 }
