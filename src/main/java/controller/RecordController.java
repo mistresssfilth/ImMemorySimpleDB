@@ -5,21 +5,18 @@ import exceprions.NullRecordException;
 import exceprions.RecordExistException;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class RecordController {
-    private Map<Long, Record> accounts;
-    private Map<String, ArrayList<Record>> names;
-    private Map<Double, ArrayList<Record>> values;
+    private TreeMap<Long, Record> accounts;
+    private TreeMap<String, ArrayList<Record>> names;
+    private TreeMap<Double, ArrayList<Record>> values;
 
     public RecordController() {
-        accounts = new HashMap<>();
-        names = new HashMap<>();
-        values = new HashMap<>();
+        accounts = new TreeMap<>();
+        names = new TreeMap<>();
+        values = new TreeMap<>();
     }
 
     public void addRecord(Record record) throws NullRecordException {
